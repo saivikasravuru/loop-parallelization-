@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Loop Parallelization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="title-container">
+                <h1>⚙️ Loop Parallelizer</h1>
+            </div>
+            <div class="controls">
+                <button id="resetBtn" class="btn outline">Reset</button>
+            </div>
+        </header>
+
+        <main class="dashboard">
+            <!-- Full Width Code Input Section -->
+            <section class="panel code-input-panel">
+                <div class="code-container">
+                    <textarea id="codeInput" spellcheck="false" class="code-editor"></textarea>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <button id="analyzeBtn" class="btn primary">Start Analysis Flow</button>
+                </div>
+            </section>
+
+            <!-- Line by Line output visualizer -->
+            <section class="panel analysis-panel" id="analysisUI" style="display: none;">
+                
+                <!-- Live Spotlight Scan -->
+                <div class="spotlight-container" id="spotlightContainer">
+                    <h3>🔍 Compiler is Scanning:</h3>
+                    <div class="spotlight-code" id="spotlightCode">Waiting...</div>
+                </div>
+
+                <h2 style="margin-top: 1.5rem;">Steps</h2>
+                <div class="steps-list" id="stepsList">
+                    <!-- Dynamic Step items generated here -->
+                </div>
+                
+                <div id="resultsContainer" style="display: none;">
+                    <h2 style="margin-top: 2rem;">Result</h2>
+                    <div class="result-box" id="resultBox">
+                        <!-- Result text here -->
+                    </div>
+
+                    <h2 style="margin-top: 1.5rem;">Code Output (Loop Splitting)</h2>
+                    <div class="output-container">
+                        <pre><code id="generatedCode"></code></pre>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
